@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block javascripts %}
+    <script src="AvataaarsJS-main/avataaars.js"></script>
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div>
+    {% for personnage in personnages %}
+        <h2>{{personnage.nom}}</h2>
+        <p>{{personnage.description}}</p>
+        <p>{{personnage.datenaissance.format('d F Y')}}</p>
+        <p>{{personnage.niveau}}</p>
+        <p>{{personnage.experience}}</p>
+        <p>{{personnage.barrevie}}</p>
+        <p>{{personnage.typepersonnage}}</p>
+    {% endfor %}
+</div>
+{% endblock %}
