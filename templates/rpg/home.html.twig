@@ -13,14 +13,11 @@
 </style>
 
 <div>
+    <input type="button" value="Voir les types" onclick="window.location.href='{{path('Type')}}';">
+    <input type="button" value="Voir les types" onclick="window.location.href='{{path('AddPersonnage')}}';">
     {% for personnage in personnages %}
         <h2>{{personnage.nom}}</h2>
-        <p>{{personnage.description}}</p>
-        <p>{{personnage.datenaissance.format('d F Y')}}</p>
-        <p>{{personnage.niveau}}</p>
-        <p>{{personnage.experience}}</p>
-        <p>{{personnage.barrevie}}</p>
-        <p>{{personnage.typepersonnage}}</p>
+        <input type="button" value="Plus d'info" onclick="window.location.href='character/{{personnage.id}}';">
     {% endfor %}
 </div>
 {% endblock %}
