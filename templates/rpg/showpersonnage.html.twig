@@ -17,10 +17,18 @@
         <h2>{{personnage.nom}}</h2>
         <p>{{personnage.description}}</p>
         <p>{{personnage.datenaissance.format('d F Y')}}</p>
-        <p>{{personnage.niveau}}</p>
-        <p>{{personnage.experience}}</p>
-        <p>{{personnage.barrevie}}</p>
+        <p>NIVEAU : {{personnage.niveau}}</p>
+        <p>EXP : {{personnage.experience}}</p>
+        <p>VIE : {{personnage.barrevie}}</p>
         <p>{{personnage.typepersonnage}}</p>
+        {% for competence in competences %}
+            <p>FORCE : {{competence.puissance}}</p>
+            <p>ENDURANCE : {{competence.endurance}}</p>
+            <p>INTELLIGENCE : {{competence.intelligence}}</p>
+            <p>CHARISME : {{competence.charisme}}</p>
+            <p>DEXTÉRITÉ : {{competence.dexterite}}</p>
+            <p>SAGESSE : {{competence.sagesse}}</p>
+        {% endfor %}
         <input type="button" value="Retour" onclick="window.location.href='{{path('Home')}}';">
         <input type="button" value="Modifier" onclick="window.location.href='/character/{{personnage.id}}/edit';">
         <input type="button" value="Effacer" onclick="window.location.href='/character/{{personnage.id}}/delete';">

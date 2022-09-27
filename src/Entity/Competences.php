@@ -165,8 +165,4 @@ class Competences
 
         return $this;
     }
-
-    public function __toString() {
-        return $this->puissance;
-    }
 }

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter type{% endblock %}
+
+{% block javascripts %}
+    <script src="AvataaarsJS-main/avataaars.js"></script>
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div>
+    {{ form_start(form) }}
+            {{ form_row(form.puissance) }}
+            {{ form_row(form.endurance) }}
+            {{ form_row(form.intelligence) }}
+            {{ form_row(form.charisme) }}
+            {{ form_row(form.dexterite) }}
+            {{ form_row(form.sagesse) }}
+
+            <button type="submit" class="btn btn-primary">Créer</button>
+        {{ form_end(form) }}
+</div>
+{% endblock %}

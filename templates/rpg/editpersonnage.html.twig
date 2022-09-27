@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{% for personnage in personnages %}{{personnage.nom}}{% endfor %}{% endblock %}
 
 {% block javascripts %}
     <script src="AvataaarsJS-main/avataaars.js"></script>
@@ -13,11 +13,10 @@
 </style>
 
 <div>
-    <input type="button" value="Voir les types" onclick="window.location.href='{{path('Type')}}';">
-    <input type="button" value="Ajouter Personnage" onclick="window.location.href='{{path('AddPersonnage')}}';">
+    {{form(form)}}
+    {{form(form2)}}
     {% for personnage in personnages %}
-        <h2>{{personnage.nom}}</h2>
-        <input type="button" value="Plus d'info" onclick="window.location.href='character/{{personnage.id}}';">
+        <input type="button" value="Retour" onclick="window.location.href='/character/{{personnage.id}}';">
     {% endfor %}
 </div>
 {% endblock %}
