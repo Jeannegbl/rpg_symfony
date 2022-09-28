@@ -72,7 +72,7 @@ class HomeController extends AbstractController
             $em->persist($competence);
             $em->flush();
 
-            return $this->redirectToRoute('Home');
+            return $this->redirectToRoute('Personnage', ['id' => $competence->getId()]);
          }
 
         return $this->render('rpg/addpersonnagecompetences.html.twig', [
@@ -141,12 +141,25 @@ class HomeController extends AbstractController
     * @Route("/character/delete/{id}", name="DeletePersonnage")
     */
     
-    public function delete_personnage(PersonnageRepository $repository, int $id): Response
+    public function delete_personnage(Personnage $personnage, PersonnageRepository $repository)
     {
-        $personnages = $repository->findBy(array('id' => $id));
-        return $this->render('rpg/showpersonnage.html.twig', [
-            'personnages' => $personnages, 
-        ]);
+        $transferid = $repository->find($personnage)->getId($personnage);
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($personnage);
+        $em->flush();
+        return $this->redirectToRoute('DeleteCompetences', ['id' => $transferid]);
+    }
+
+    /**
+    * @Route("/character/delete/{id}/2", name="DeleteCompetences")
+    */
+    
+    public function delete_competences(Competences $competence, CompetencesRepository $repository)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($competence);
+        $em->flush();
+        return $this->redirectToRoute('Home'); 
     }
 
     /**
@@ -165,10 +178,11 @@ class HomeController extends AbstractController
     * @Route("/type/delete/{id}", name="DeleteType")
     */
     
-    public function delete_type(Type $id, TypeRepository $repository): Response
+    public function delete_type(Type $id, TypeRepository $repository)
     {
-        $repository->remove($id);
-        $repository->flush();
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($id);
+        $em->flush();
         return $this->redirectToRoute('Type'); 
     }
     
