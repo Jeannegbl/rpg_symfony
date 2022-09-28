@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter type{% endblock %}
+{% block title %}Ajouter personnage{% endblock %}
 
 {% block javascripts %}
     <script src="AvataaarsJS-main/avataaars.js"></script>
@@ -23,8 +23,8 @@
             {{ form_row(form.type_personnage) }}
 
 
-            <button type="submit" class="btn btn-primary">Suite</button>
+            <button type="submit">Suite</button>
         {{ form_end(form) }}
-    <input type="button" value="Retour" onclick="window.location.href='{{path('Home')}}';">
+    <input type="button" value="Annuler" onclick="window.location.href='{{path('Home')}}';">
 </div>
 {% endblock %}

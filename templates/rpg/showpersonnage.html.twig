@@ -29,9 +29,9 @@
             <p>DEXTÉRITÉ : {{competence.dexterite}}</p>
             <p>SAGESSE : {{competence.sagesse}}</p>
         {% endfor %}
-        <input type="button" value="Retour" onclick="window.location.href='{{path('Home')}}';">
-        <input type="button" value="Modifier" onclick="window.location.href='/character/{{personnage.id}}/edit';">
-        <input type="button" value="Effacer" onclick="window.location.href='/character/{{personnage.id}}/delete';">
+        <input type="button" value="Retour au menu" onclick="window.location.href='{{path('Home')}}';">
+        <input type="button" value="Modifier" onclick="window.location.href='/character/edit/{{personnage.id}}';">
+        <input type="button" value="Effacer" onclick="window.location.href='/character/delete/{{personnage.id}}';">
     {% endfor %}
 </div>
 {% endblock %}

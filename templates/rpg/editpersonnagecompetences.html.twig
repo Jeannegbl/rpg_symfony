@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter type{% endblock %}
+{% block title %}Modifier compétences{% endblock %}
 
 {% block javascripts %}
     <script src="AvataaarsJS-main/avataaars.js"></script>
@@ -14,10 +14,14 @@
 
 <div>
     {{ form_start(form) }}
-            {{ form_row(form.nom) }}
+            {{ form_row(form.puissance) }}
+            {{ form_row(form.endurance) }}
+            {{ form_row(form.intelligence) }}
+            {{ form_row(form.charisme) }}
+            {{ form_row(form.dexterite) }}
+            {{ form_row(form.sagesse) }}
 
-            <button type="submit">Créer</button>
+            <button type="submit">Modifier</button>
         {{ form_end(form) }}
-    <input type="button" value="Annuler" onclick="window.location.href='{{path('Type')}}';">
 </div>
 {% endblock %}

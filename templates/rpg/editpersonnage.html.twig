@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% for personnage in personnages %}{{personnage.nom}}{% endfor %}{% endblock %}
+{% block title %}Modifier personnage{% endblock %}
 
 {% block javascripts %}
     <script src="AvataaarsJS-main/avataaars.js"></script>
@@ -13,10 +13,18 @@
 </style>
 
 <div>
-    {{form(form)}}
-    {{form(form2)}}
-    {% for personnage in personnages %}
-        <input type="button" value="Retour" onclick="window.location.href='/character/{{personnage.id}}';">
-    {% endfor %}
+    {{ form_start(form) }}
+            {{ form_row(form.nom) }}
+            {{ form_row(form.date_naissance) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.niveau) }}
+            {{ form_row(form.experience) }}
+            {{ form_row(form.barre_vie) }}
+            {{ form_row(form.type_personnage) }}
+
+
+            <button type="submit">Suite</button>
+        {{ form_end(form) }}
+    <input type="button" value="Annuler" onclick="history.back()">
 </div>
 {% endblock %}

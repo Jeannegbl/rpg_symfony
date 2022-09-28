@@ -13,12 +13,12 @@
 </style>
 
 <div>
-    <input type="button" value="Retour" onclick="window.location.href='{{path('Home')}}';">
+    <input type="button" value="Retour au menu" onclick="window.location.href='{{path('Home')}}';">
     <input type="button" value="Ajouter" onclick="window.location.href='{{path('AddType')}}';">
     {% for type in types %}
         <h2>{{type.nom}}</h2>
-        <input type="button" value="Modifier" onclick="window.location.href='{{path('EditType')}}';">
-        <input type="button" value="Effacer" onclick="window.location.href='{{path('DeleteType')}}';">
+        <input type="button" value="Modifier" onclick="window.location.href='/type/edit/{{type.id}}';">
+        <input type="button" value="Effacer" onclick="window.location.href='/type/delete/{{type.id}}';">
     {% endfor %}
 </div>
 {% endblock %}

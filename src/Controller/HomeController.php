@@ -48,7 +48,7 @@ class HomeController extends AbstractController
             $em->persist($personnage);
             $em->flush();
 
-            return $this->redirectToRoute('Competences');
+            return $this->redirectToRoute('AddCompetences');
          }
 
         return $this->render('rpg/addpersonnage.html.twig', [
@@ -57,7 +57,7 @@ class HomeController extends AbstractController
     }
 
     /**
-    * @Route("/character/add/2", name="Competences")
+    * @Route("/character/add/2", name="AddCompetences")
     */
     
     public function add_competences(Request $request): Response
@@ -94,23 +94,51 @@ class HomeController extends AbstractController
     }
 
     /**
-    * @Route("/character/{id}/edit", name="EditPersonnage")
+    * @Route("/character/edit/{id}", name="EditPersonnage")
     */
     
-    public function edit_personnage(PersonnageRepository $repository, int $id): Response
+    public function edit_personnage(Personnage $personnage, Request $request)
     {
-        $personnages = $repository->findBy(array('id' => $id));
-        $personnage = new Personnage();
         $form = $this->createForm(PersonnageType::class, $personnage);
-        $competence = new Competences();
-        $form2 = $this->createForm(CompetencesType::class, $competence);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&& $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($personnage);
+            $em->flush();
+
+            return $this->redirectToRoute('EditCompetences', ['id' => $personnage->getId()]);
+         }
+
         return $this->render('rpg/editpersonnage.html.twig', [
-            'form' => $form->createView(), 'form2' => $form2->createView(), 'personnages' => $personnages, 
+            'form' => $form->createView(),
+        ]);
+    }
+
+        /**
+    * @Route("/character/edit/{id}/2", name="EditCompetences")
+    */
+    
+    public function edit_competences(Competences $competences, Request $request)
+    {
+        $form = $this->createForm(CompetencesType::class, $competences);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&& $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($competences);
+            $em->flush();
+
+            return $this->redirectToRoute('Personnage', ['id' => $competences->getId()]);
+         }
+
+        return $this->render('rpg/editpersonnagecompetences.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 
     /**
-    * @Route("/character/{id}/delete", name="DeletePersonnage")
+    * @Route("/character/delete/{id}", name="DeletePersonnage")
     */
     
     public function delete_personnage(PersonnageRepository $repository, int $id): Response
@@ -134,15 +162,14 @@ class HomeController extends AbstractController
     }
 
     /**
-    * @Route("/type/delete", name="DeleteType")
+    * @Route("/type/delete/{id}", name="DeleteType")
     */
     
-    public function delete_type(TypeRepository $repository): Response
+    public function delete_type(Type $id, TypeRepository $repository): Response
     {
-        $type = $repository->findAll();
-        return $this->render('rpg/type.html.twig', [
-            'types' => $type, 
-        ]);
+        $repository->remove($id);
+        $repository->flush();
+        return $this->redirectToRoute('Type'); 
     }
     
 
@@ -171,14 +198,24 @@ class HomeController extends AbstractController
     }
 
     /**
-    * @Route("/type/edit", name="EditType")
+    * @Route("/type/edit/{id}", name="EditType")
     */
     
-    public function edit_type(TypeRepository $repository): Response
+    public function edit_type(Type $type, Request $request)
     {
-        $type = $repository->findAll();
-        return $this->render('rpg/type.html.twig', [
-            'types' => $type, 
+        $form = $this->createForm(TypesType::class, $type);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&& $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($type);
+            $em->flush();
+
+            return $this->redirectToRoute('Type');
+         }
+
+        return $this->render('rpg/edittype.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 }
