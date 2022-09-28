@@ -29,6 +29,11 @@
             <p>DEXTÉRITÉ : {{competence.dexterite}}</p>
             <p>SAGESSE : {{competence.sagesse}}</p>
         {% endfor %}
+        <div id="avataar"></div>
+        <script>
+            let a = Avataaars.create();
+            document.getElementById('avataar').innerHTML = a;
+        </script>
         <input type="button" value="Retour au menu" onclick="window.location.href='{{path('Home')}}';">
         <input type="button" value="Modifier" onclick="window.location.href='/character/edit/{{personnage.id}}';">
         <input type="button" value="Effacer" onclick="window.location.href='/character/delete/{{personnage.id}}';">
