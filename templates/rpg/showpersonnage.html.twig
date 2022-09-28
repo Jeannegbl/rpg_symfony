@@ -30,10 +30,22 @@
             <p>SAGESSE : {{competence.sagesse}}</p>
         {% endfor %}
         <div id="avataar"></div>
+        {% for avatar in avatars %}
         <script>
-            let a = Avataaars.create();
+            let a = Avataaars.create({width: "10vw", height: "20vh", style: "transparent", clothingGraphic: "skull",
+                                    skin: "{{avatar.skin}}",
+                                    top: "{{avatar.top}}",
+                                    hairColor: "{{avatar.haircolor}}",
+                                    hatColor: "{{avatar.hatcolor}}",
+                                    accessories: "{{avatar.accessories}}",
+                                    accessoriesColor: "{{avatar.accessoriescolor}}",
+                                    facialHair: "{{avatar.facialhair}}",
+                                    facialHairColor: "{{avatar.facialhaircolor}}",
+                                    clothing: "{{avatar.clothing}}",
+                                    clothingColor: "{{avatar.clothingcolor}}"});
             document.getElementById('avataar').innerHTML = a;
         </script>
+        {% endfor %}
         <input type="button" value="Retour au menu" onclick="window.location.href='{{path('Home')}}';">
         <input type="button" value="Modifier" onclick="window.location.href='/character/edit/{{personnage.id}}';">
         <input type="button" value="Effacer" onclick="window.location.href='/character/delete/{{personnage.id}}';">

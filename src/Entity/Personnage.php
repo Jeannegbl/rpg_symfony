@@ -57,6 +57,11 @@ class Personnage
      */
     private $competences_personnage;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Avatar::class, inversedBy="personnages")
+     */
+    private $avatar_personnage;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,6 +159,18 @@ class Personnage
     public function setCompetencesPersonnage(?Competences $competences_personnage): self
     {
         $this->competences_personnage = $competences_personnage;
+
+        return $this;
+    }
+
+    public function getAvatarPersonnage(): ?Avatar
+    {
+        return $this->avatar_personnage;
+    }
+
+    public function setAvatarPersonnage(?Avatar $avatar_personnage): self
+    {
+        $this->avatar_personnage = $avatar_personnage;
 
         return $this;
     }

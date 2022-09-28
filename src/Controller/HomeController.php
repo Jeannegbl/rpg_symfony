@@ -8,12 +8,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Repository\PersonnageRepository;
 use App\Repository\TypeRepository;
 use App\Repository\CompetencesRepository;
+use App\Repository\AvatarRepository;
 use App\Entity\Personnage;
 use App\Entity\Type;
 use App\Entity\Competences;
+use App\Entity\Avatar;
 use App\Form\PersonnageType;
 use App\Form\CompetencesType;
 use App\Form\TypesType;
+use App\Form\AvatarType;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -81,15 +84,40 @@ class HomeController extends AbstractController
     }
 
     /**
+    * @Route("/character/test", name="AddAvatar")
+    */
+    
+    public function add_avatar(Request $request): Response
+    {
+        $avatar = new Avatar();
+        $form = $this->createForm(AvatarType::class, $avatar);
+        $form->handleRequest($request);
+
+
+        if ($form->isSubmitted()&& $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($avatar);
+            $em->flush();
+
+            return $this->redirectToRoute('Personnage', ['id' => $avatar->getId()]);
+         }
+
+        return $this->render('rpg/addpersonnageavatar.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
     * @Route("/character/{id}", name="Personnage")
     */
     
-    public function show_personnage(PersonnageRepository $repository, int $id,CompetencesRepository $repository2): Response
+    public function show_personnage(PersonnageRepository $repository, int $id,CompetencesRepository $repository2, AvatarRepository $repository3): Response
     {
         $personnages = $repository->findBy(array('id' => $id));
         $competences = $repository2->findBy(array('id' => $id));
+        $avatars = $repository3->findBy(array('id' => $id));
         return $this->render('rpg/showpersonnage.html.twig', [
-            'personnages' => $personnages, 'competences' => $competences
+            'personnages' => $personnages, 'competences' => $competences, 'avatars' => $avatars
         ]);
     }
 
