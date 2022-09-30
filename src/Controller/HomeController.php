@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController extends AbstractController
 {
     /**
-    * @Route("/home", name="Home")
+    * @Route("/", name="Home")
     */
     
     public function index(PersonnageRepository $repository): Response
@@ -75,7 +75,7 @@ class HomeController extends AbstractController
             $em->persist($competence);
             $em->flush();
 
-            return $this->redirectToRoute('Personnage', ['id' => $competence->getId()]);
+            return $this->redirectToRoute('AddAvatar');
          }
 
         return $this->render('rpg/addpersonnagecompetences.html.twig', [
@@ -84,7 +84,7 @@ class HomeController extends AbstractController
     }
 
     /**
-    * @Route("/character/test", name="AddAvatar")
+    * @Route("/character/add/3", name="AddAvatar")
     */
     
     public function add_avatar(Request $request): Response
@@ -143,7 +143,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-        /**
+    /**
     * @Route("/character/edit/{id}/2", name="EditCompetences")
     */
     
@@ -157,10 +157,32 @@ class HomeController extends AbstractController
             $em->persist($competences);
             $em->flush();
 
-            return $this->redirectToRoute('Personnage', ['id' => $competences->getId()]);
+            return $this->redirectToRoute('EditAvatar', ['id' => $competences->getId()]);
          }
 
         return $this->render('rpg/editpersonnagecompetences.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+    * @Route("/character/edit/{id}/3", name="EditAvatar")
+    */
+    
+    public function edit_avatar(Avatar $avatar, Request $request)
+    {
+        $form = $this->createForm(AvatarType::class, $avatar);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&& $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($avatar);
+            $em->flush();
+
+            return $this->redirectToRoute('Personnage', ['id' => $avatar->getId()]);
+         }
+
+        return $this->render('rpg/editpersonnageavatar.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -184,8 +206,21 @@ class HomeController extends AbstractController
     
     public function delete_competences(Competences $competence, CompetencesRepository $repository)
     {
+        $transferid = $repository->find($competence)->getId($competence);
         $em = $this->getDoctrine()->getManager();
         $em->remove($competence);
+        $em->flush();
+        return $this->redirectToRoute('DeleteAvatar', ['id' => $transferid]);
+    }
+
+    /**
+    * @Route("/character/delete/{id}/3", name="DeleteAvatar")
+    */
+    
+    public function delete_avatar(Avatar $avatar, AvatarRepository $repository)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($avatar);
         $em->flush();
         return $this->redirectToRoute('Home'); 
     }
