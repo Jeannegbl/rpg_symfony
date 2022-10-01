@@ -2,8 +2,10 @@
 
 {% block title %}Modifier personnage{% endblock %}
 
-{% block javascripts %}
-    <script src="AvataaarsJS-main/avataaars.js"></script>
+{% block header %}
+    <h1 class="font">Étape 1</h1>
+    <h1 class="font">Modifier un personnage</h1>
+    <input type="button" class="input-bouton" value="Annuler" onclick="history.back()">
 {% endblock %}
 
 {% block body %}
@@ -12,40 +14,41 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div>
-    {{ form_start(form) }}
-        <div class="form-presentation">
-            <label for="">Nom : </label>
-                {{ form_widget(form.nom) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Date de naissance : </label>
-                {{ form_widget(form.date_naissance) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Description : </label>
-                {{ form_widget(form.description) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Niveau : </label>
-                {{ form_widget(form.niveau) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Experience : </label>
-                {{ form_widget(form.experience) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Nombre de cœur : </label>
-                {{ form_widget(form.barre_vie) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Type : </label>
-                {{ form_widget(form.type_personnage) }}
-        </div>
-
-
-            <button type="submit">Suite</button>
+<div class="liste">
+    <div class="cadre">
+        {{ form_start(form) }}
+            <div class="form-presentation">
+                <label for="">Nom : </label>
+                    {{ form_widget(form.nom) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Date de naissance : </label>
+                    {{ form_widget(form.date_naissance) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Description : </label>
+                    {{ form_widget(form.description) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Niveau : </label>
+                    {{ form_widget(form.niveau) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Experience : </label>
+                    {{ form_widget(form.experience) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Nombre de cœur : </label>
+                    {{ form_widget(form.barre_vie) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Type : </label>
+                    {{ form_widget(form.type_personnage) }}
+            </div>
+            <div class="bouton-aerer">
+                <button type="submit" class="input-bouton input-body">Suite</button>
+            </div>
         {{ form_end(form) }}
-    <input type="button" value="Annuler" onclick="history.back()">
+    </div>
 </div>
 {% endblock %}

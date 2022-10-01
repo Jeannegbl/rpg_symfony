@@ -2,8 +2,9 @@
 
 {% block title %}Modifier type{% endblock %}
 
-{% block javascripts %}
-    <script src="AvataaarsJS-main/avataaars.js"></script>
+{% block header %}
+    <h1 class="font">Modifier un type</h1>
+    <input type="button" class="input-bouton" value="Annuler" onclick="window.location.href='{{path('Type')}}';">
 {% endblock %}
 
 {% block body %}
@@ -12,15 +13,17 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div>
-    {{ form_start(form) }}
-        <div class="form-presentation">
-            <label for="">Nom du type : </label>
-                {{ form_widget(form.nom) }}
-        </div>
-
-        <button type="submit">Modifier</button>
-    {{ form_end(form) }}
-    <input type="button" value="Annuler" onclick="window.location.href='{{path('Type')}}';">
+<div class="liste">
+    <div class="cadre">
+        {{ form_start(form) }}
+            <div class="form-presentation">
+                <label for="">Nom : </label>
+                    {{ form_widget(form.nom) }}
+            </div>
+            <div class="bouton-aerer">
+                <button type="submit" class="input-bouton input-body">Modifier</button>
+            <div>
+        {{ form_end(form) }}
+    </div>
 </div>
 {% endblock %}

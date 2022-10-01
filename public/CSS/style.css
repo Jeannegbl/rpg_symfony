@@ -1,12 +1,13 @@
 body{
     margin: 0;
+    background-color: whitesmoke;
 }
 header{
     background-color: #444444;
     width: 100%;
     height: 10vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin-bottom: 5vh;
 }
@@ -29,4 +30,24 @@ header{
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+.bouton-aerer{
+    display: flex;
+    justify-content: center;
+    margin: 2vh 1vw;
+}
+.form-presentation{
+    margin: 1vh 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-presentation > label{
+    padding-right: 5px;
+}
+
+.cadre{
+    margin: 2vh 2vw;
+    padding: 6vh 1vw 0 1vw;
+    background-color: silver;
 }

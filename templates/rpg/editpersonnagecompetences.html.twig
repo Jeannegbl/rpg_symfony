@@ -2,8 +2,9 @@
 
 {% block title %}Modifier compétences{% endblock %}
 
-{% block javascripts %}
-    <script src="AvataaarsJS-main/avataaars.js"></script>
+{% block header %}
+    <h1 class="font">Étape 2</h1>
+    <h1 class="font">Modifier un personnage</h1>
 {% endblock %}
 
 {% block body %}
@@ -12,34 +13,37 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div>
-    {{ form_start(form) }}
-        <div class="form-presentation">
-            <label for="">Point de Puissance : </label>
-                {{ form_widget(form.puissance) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Point d'Endurance : </label>
-                {{ form_widget(form.endurance) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Point d'Intelligence : </label>
-                {{ form_widget(form.intelligence) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Point de Charisme : </label>
-                {{ form_widget(form.charisme) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Point de Dextérité : </label>
-                {{ form_widget(form.dexterite) }}
-        </div>
-        <div class="form-presentation">
-            <label for="">Point de Sagesse : </label>
-                {{ form_widget(form.sagesse) }}
-        </div>
-
-        <button type="submit">Suite</button>
-    {{ form_end(form) }}
+<div class="liste">
+    <div class="cadre">
+        {{ form_start(form) }}
+            <div class="form-presentation">
+                <label for="">Point de Puissance : </label>
+                    {{ form_widget(form.puissance) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Point d'Endurance : </label>
+                    {{ form_widget(form.endurance) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Point d'Intelligence : </label>
+                    {{ form_widget(form.intelligence) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Point de Charisme : </label>
+                    {{ form_widget(form.charisme) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Point de Dextérité : </label>
+                    {{ form_widget(form.dexterite) }}
+            </div>
+            <div class="form-presentation">
+                <label for="">Point de Sagesse : </label>
+                    {{ form_widget(form.sagesse) }}
+            </div>
+            <div class="bouton-aerer">
+                <button type="submit" class="input-bouton input-body">Suite</button>
+            </div>
+        {{ form_end(form) }}
+    </div>
 </div>
 {% endblock %}
