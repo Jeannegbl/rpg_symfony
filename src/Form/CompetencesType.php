@@ -5,18 +5,44 @@ namespace App\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+
 
 class CompetencesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('puissance')
-            ->add('endurance')
-            ->add('intelligence')
-            ->add('charisme')
-            ->add('dexterite')
-            ->add('sagesse')
+            ->add('puissance', IntegerType::class, [
+                'attr' => [
+                'min' => 0,
+                ],
+            ])
+            ->add('endurance', IntegerType::class, [
+                'attr' => [
+                'min' => 0,
+                ],
+            ])
+            ->add('intelligence', IntegerType::class, [
+                'attr' => [
+                'min' => 0,
+                ],
+            ])
+            ->add('charisme', IntegerType::class, [
+                'attr' => [
+                'min' => 0,
+                ],
+            ])
+            ->add('dexterite', IntegerType::class, [
+                'attr' => [
+                'min' => 0,
+                ],
+            ])
+            ->add('sagesse', IntegerType::class, [
+                'attr' => [
+                'min' => 0,
+                ],
+            ])
         ;
     }
 

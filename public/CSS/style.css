@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+}
+header{
+    background-color: #444444;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+.font{
+    color: azure;
+}
+.input-bouton{
+    border-radius: 15px;
+    background-color: azure;
+    color: black;
+    padding: 1vh 1vw;
+    border: none;
+    font-size: 18px;
+}
+.input-body{
+    background-color: #868686;
+    color: azure;
+}
+.liste{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

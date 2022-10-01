@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modifier Avatar{% endblock %}
+{% block title %}Modifier avatar{% endblock %}
 
 {% block javascripts %}
     <script src="AvataaarsJS-main/avataaars.js"></script>
@@ -14,16 +14,46 @@
 
 <div>
     {{ form_start(form) }}
-            {{ form_row(form.skin) }}
-            {{ form_row(form.top) }}
-            {{ form_row(form.haircolor) }}
-            {{ form_row(form.hatcolor) }}
-            {{ form_row(form.accessories) }}
-            {{ form_row(form.accessories_color) }}
-            {{ form_row(form.facialhair) }}
-            {{ form_row(form.facialhaircolor) }}
-            {{ form_row(form.clothing) }}
-            {{ form_row(form.clothingcolor) }}
+        <div class="form-presentation">
+            <label for="">Couleur de peau : </label>
+                {{ form_widget(form.skin) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Cheveux/Chapeau : </label>
+                {{ form_widget(form.top) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Couleur de cheveux : </label>
+                {{ form_widget(form.haircolor) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Couleur de chapeau : </label>
+                {{ form_widget(form.hatcolor) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Accessoire : </label>
+                {{ form_widget(form.accessories) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Couleur de l'accessoire : </label>
+                {{ form_widget(form.accessories_color) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Barbe/Moustache : </label>
+                {{ form_widget(form.facialhair) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Couleur barbe/moustache  : </label>
+                {{ form_widget(form.facialhaircolor) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Vêtement : </label>
+                {{ form_widget(form.clothing) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Couleur vêtement : </label>
+                {{ form_widget(form.clothingcolor) }}
+        </div>
             
             <button type="submit">Modifier</button>
         {{ form_end(form) }}

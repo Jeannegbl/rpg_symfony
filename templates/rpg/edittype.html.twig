@@ -14,10 +14,13 @@
 
 <div>
     {{ form_start(form) }}
-            {{ form_row(form.nom) }}
+        <div class="form-presentation">
+            <label for="">Nom du type : </label>
+                {{ form_widget(form.nom) }}
+        </div>
 
-            <button type="submit">Modifier</button>
-        {{ form_end(form) }}
+        <button type="submit">Modifier</button>
+    {{ form_end(form) }}
     <input type="button" value="Annuler" onclick="window.location.href='{{path('Type')}}';">
 </div>
 {% endblock %}

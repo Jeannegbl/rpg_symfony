@@ -2,8 +2,15 @@
 
 {% block title %}{% for personnage in personnages %}{{personnage.nom}}{% endfor %}{% endblock %}
 
-{% block javascripts %}
-    <script src="AvataaarsJS-main/avataaars.js"></script>
+{% block header %}
+    {% for personnage in personnages %}
+        <input type="button" class="input-bouton" value="Retour au menu" onclick="window.location.href='{{path('Home')}}';">
+        <h1 class="font">{{personnage.nom}}</h1>
+        <div>
+            <input type="button" class="input-bouton" value="Modifier" onclick="window.location.href='/character/edit/{{personnage.id}}';">
+            <input type="button" class="input-bouton" value="Effacer" onclick="window.location.href='/character/delete/{{personnage.id}}';">
+        </div>
+    {% endfor %}
 {% endblock %}
 
 {% block body %}
@@ -14,7 +21,6 @@
 
 <div>
     {% for personnage in personnages %}
-        <h2>{{personnage.nom}}</h2>
         <p>{{personnage.description}}</p>
         <p>{{personnage.datenaissance.format('d F Y')}}</p>
         <p>NIVEAU : {{personnage.niveau}}</p>
@@ -46,9 +52,6 @@
             document.getElementById('avataar').innerHTML = a;
         </script>
         {% endfor %}
-        <input type="button" value="Retour au menu" onclick="window.location.href='{{path('Home')}}';">
-        <input type="button" value="Modifier" onclick="window.location.href='/character/edit/{{personnage.id}}';">
-        <input type="button" value="Effacer" onclick="window.location.href='/character/delete/{{personnage.id}}';">
     {% endfor %}
 </div>
 {% endblock %}

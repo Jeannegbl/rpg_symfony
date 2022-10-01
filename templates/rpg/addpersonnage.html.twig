@@ -14,13 +14,34 @@
 
 <div>
     {{ form_start(form) }}
-            {{ form_row(form.nom) }}
-            {{ form_row(form.date_naissance) }}
-            {{ form_row(form.description) }}
-            {{ form_row(form.niveau) }}
-            {{ form_row(form.experience) }}
-            {{ form_row(form.barre_vie) }}
-            {{ form_row(form.type_personnage) }}
+    <div class="form-presentation">
+        <label for="">Nom : </label>
+            {{ form_widget(form.nom) }}
+    </div>
+    <div class="form-presentation">
+        <label for="">Date de naissance : </label>
+            {{ form_widget(form.date_naissance) }}
+    </div>
+    <div class="form-presentation">
+        <label for="">Description : </label>
+            {{ form_widget(form.description) }}
+    </div>
+    <div class="form-presentation">
+        <label for="">Niveau : </label>
+            {{ form_widget(form.niveau) }}
+    </div>
+    <div class="form-presentation">
+        <label for="">Experience : </label>
+            {{ form_widget(form.experience) }}
+    </div>
+    <div class="form-presentation">
+        <label for="">Nombre de cœur : </label>
+            {{ form_widget(form.barre_vie) }}
+    </div>
+    <div class="form-presentation">
+        <label for="">Type : </label>
+            {{ form_widget(form.type_personnage) }}
+    </div>
 
 
             <button type="submit">Suite</button>

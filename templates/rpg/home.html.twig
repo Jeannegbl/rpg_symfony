@@ -2,7 +2,10 @@
 
 {% block title %}Home{% endblock %}
 
-{% block javascripts %}
+{% block header %}
+    <input type="button" class="input-bouton" value="Voir les types" onclick="window.location.href='{{path('Type')}}';">
+    <h1 class="font">Générateur de Personnage RPG</h1>
+    <input type="button" class="input-bouton" value="Ajouter Personnage" onclick="window.location.href='{{path('AddPersonnage')}}';">
 {% endblock %}
 
 {% block body %}
@@ -11,12 +14,10 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div>
-    <input type="button" value="Voir les types" onclick="window.location.href='{{path('Type')}}';">
-    <input type="button" value="Ajouter Personnage" onclick="window.location.href='{{path('AddPersonnage')}}';">
+<div class="liste">
     {% for personnage in personnages %}
         <h2>{{personnage.nom}}</h2>
-        <input type="button" value="Plus d'info" onclick="window.location.href='character/{{personnage.id}}';">
+        <input type="button" class="input-bouton input-body" value="Plus d'info" onclick="window.location.href='character/{{personnage.id}}';">
     {% endfor %}
 </div>
 {% endblock %}

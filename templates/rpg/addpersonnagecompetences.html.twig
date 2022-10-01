@@ -14,14 +14,32 @@
 
 <div>
     {{ form_start(form) }}
-            {{ form_row(form.puissance) }}
-            {{ form_row(form.endurance) }}
-            {{ form_row(form.intelligence) }}
-            {{ form_row(form.charisme) }}
-            {{ form_row(form.dexterite) }}
-            {{ form_row(form.sagesse) }}
+        <div class="form-presentation">
+            <label for="">Point de Puissance : </label>
+                {{ form_widget(form.puissance) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Point d'Endurance : </label>
+                {{ form_widget(form.endurance) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Point d'Intelligence : </label>
+                {{ form_widget(form.intelligence) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Point de Charisme : </label>
+                {{ form_widget(form.charisme) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Point de Dextérité : </label>
+                {{ form_widget(form.dexterite) }}
+        </div>
+        <div class="form-presentation">
+            <label for="">Point de Sagesse : </label>
+                {{ form_widget(form.sagesse) }}
+        </div>
 
-            <button type="submit">Suite</button>
-        {{ form_end(form) }}
+        <button type="submit">Suite</button>
+    {{ form_end(form) }}
 </div>
 {% endblock %}
