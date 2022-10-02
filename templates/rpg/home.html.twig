@@ -5,7 +5,7 @@
 {% block header %}
     <input type="button" class="input-bouton" value="Voir les types" onclick="window.location.href='{{path('Type')}}';">
     <h1 class="font">Générateur de Personnage RPG</h1>
-    <input type="button" class="input-bouton" value="Ajouter Personnage" onclick="window.location.href='{{path('AddPersonnage')}}';">
+    <input type="button" class="input-bouton input-ajouter" value="Ajouter Personnage" onclick="window.location.href='{{path('AddPersonnage')}}';">
 {% endblock %}
 
 {% block body %}
@@ -16,9 +16,9 @@
 
 <div class="liste">
     {% for personnage in personnages %}
-    <div class="selection-personnage">
+    <div class="selection">
         <h2>{{personnage.nom}}</h2>
-        <input type="button" class="input-bouton input-body" value="Plus d'info" onclick="window.location.href='character/{{personnage.id}}';">
+        <input type="button" class="input-bouton input-modifier" value="Plus d'info" onclick="window.location.href='character/{{personnage.id}}';">
     </div>
     {% endfor %}
 </div>

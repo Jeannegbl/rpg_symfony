@@ -6,7 +6,7 @@
 {% block header %}
         <input type="button" class="input-bouton" value="Retour au menu" onclick="window.location.href='{{path('Home')}}';">
         <h1 class="font">Liste de tout les types</h1>
-        <input type="button" class="input-bouton" value="Ajouter" onclick="window.location.href='{{path('AddType')}}';">
+        <input type="button" class="input-bouton input-ajouter" value="Ajouter Type" onclick="window.location.href='{{path('AddType')}}';">
 {% endblock %}
 
 {% block body %}
@@ -17,10 +17,12 @@
 
 <div class="liste">
     {% for type in types %}
-        <h2>{{type.nom}}</h2>
-        <div>
-            <input type="button" class="input-bouton input-body" value="Modifier" onclick="window.location.href='/type/edit/{{type.id}}';">
-            <input type="button" class="input-bouton input-body" value="Effacer" onclick="window.location.href='/type/delete/{{type.id}}';">
+        <div class="selection">
+            <h2>{{type.nom}}</h2>
+            <div>
+                <input type="button" class="input-bouton input-modifier" value="Modifier" onclick="window.location.href='/type/edit/{{type.id}}';">
+                <input type="button" class="input-bouton input-effacer" value="Effacer" onclick="window.location.href='/type/delete/{{type.id}}';">
+            </div>
         </div>
     {% endfor %}
 </div>

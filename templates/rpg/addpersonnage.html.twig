@@ -3,7 +3,7 @@
 {% block header %}
     <h1 class="font">Étape 1</h1>
     <h1 class="font">Ajouter un personnage</h1>
-    <input type="button" class="input-bouton" value="Annuler" onclick="window.location.href='{{path('Home')}}';">
+    <input type="button" class="input-bouton input-effacer" value="Annuler" onclick="window.location.href='{{path('Home')}}';">
 {% endblock %}
 
 {% block title %}Ajouter personnage{% endblock %}
@@ -50,7 +50,7 @@
                     {{ form_widget(form.type_personnage) }}
             </div>
             <div class="bouton-aerer">
-                <button type="submit" class="input-bouton input-body">Suite</button>
+                <button type="submit" class="input-bouton input-modifier">Suite</button>
             </div>
         {{ form_end(form) }}
     </div>

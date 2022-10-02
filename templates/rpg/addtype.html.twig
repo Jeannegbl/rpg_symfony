@@ -4,7 +4,7 @@
 
 {% block header %}
     <h1 class="font">Ajouter un type</h1>
-    <input type="button" class="input-bouton" value="Annuler"  onclick="window.location.href='{{path('Type')}}';">
+    <input type="button" class="input-bouton input-effacer" value="Annuler"  onclick="window.location.href='{{path('Type')}}';">
 {% endblock %}
 
 {% block body %}
@@ -21,7 +21,7 @@
                     {{ form_widget(form.nom) }}
             </div>
             <div class="bouton-aerer">
-                <button type="submit" class="input-bouton input-body">Créer</button>
+                <button type="submit" class="input-bouton input-ajouter">Créer</button>
             </div>
         {{ form_end(form) }}
     </div>

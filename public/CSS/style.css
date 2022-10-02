@@ -19,12 +19,42 @@ header{
     background-color: azure;
     color: black;
     padding: 1vh 1vw;
-    border: none;
+    border: 2px solid azure;
     font-size: 18px;
+    cursor: pointer;
 }
-.input-body{
-    background-color: #868686;
+.input-bouton:hover{
+    background-color: rgb(178, 189, 189);
+}
+.input-ajouter{
+    background-color: rgb(4, 192, 129);
     color: azure;
+    border-color: rgb(4, 192, 129);
+}
+.input-ajouter:hover{
+    background-color: azure;
+    color: rgb(4, 192, 129);
+    border-color: rgb(4, 192, 129);
+}
+.input-modifier{
+    background-color: rgb(4, 132, 192);
+    color: azure;
+    border-color: rgb(4, 132, 192);
+}
+.input-modifier:hover{
+    background-color: azure;
+    color: rgb(4, 132, 192);
+    border-color: rgb(4, 132, 192);
+}
+.input-effacer{
+    background-color: rgb(216, 13, 13);
+    color: azure;
+    border-color: rgb(216, 13, 13);
+}
+.input-effacer:hover{
+    background-color: azure;
+    color: rgb(216, 13, 13);
+    border-color: rgb(216, 13, 13);
 }
 .liste{
     display: flex;
@@ -42,7 +72,7 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-.form-presentation > label, .selection-personnage > h2{
+.form-presentation > label, .selection > h2{
     padding-right: 5px;
 }
 
@@ -88,7 +118,8 @@ svg{
     display: flex;
     justify-content: space-evenly;
 }
-.selection-personnage{
+.selection{
     display: flex;
     align-items: center;
+    margin: 1vh 1vw;
 }
