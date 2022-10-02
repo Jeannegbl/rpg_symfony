@@ -42,7 +42,7 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-.form-presentation > label{
+.form-presentation > label, .selection-personnage > h2{
     padding-right: 5px;
 }
 
@@ -50,4 +50,45 @@ header{
     margin: 2vh 2vw;
     padding: 6vh 1vw 0 1vw;
     background-color: silver;
+}
+.cadre-personnage{
+    background: url(../Image/Fond-parchemin.jpg);
+    width: 50vw;
+}
+.avatar{
+    display: flex;
+    justify-content: center;
+}
+.coeur{
+    width: 2vw;
+    padding-right: 5px;
+}
+
+.info-personnage{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+.fiche-personnage{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1vw 1vh;
+}
+
+svg{
+    border: 7px solid #ddd;
+    border-radius: 15px;
+    background-color: whitesmoke;
+}
+.description-personnage{
+    display: flex;
+    flex-direction: column;
+}
+.point-personnage{
+    display: flex;
+    justify-content: space-evenly;
+}
+.selection-personnage{
+    display: flex;
+    align-items: center;
 }

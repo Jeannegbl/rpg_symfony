@@ -19,39 +19,53 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div>
-    {% for personnage in personnages %}
-        <p>{{personnage.description}}</p>
-        <p>{{personnage.datenaissance.format('d F Y')}}</p>
-        <p>NIVEAU : {{personnage.niveau}}</p>
-        <p>EXP : {{personnage.experience}}</p>
-        <p>VIE : {{personnage.barrevie}}</p>
-        <p>{{personnage.typepersonnage}}</p>
-        {% for competence in competences %}
-            <p>FORCE : {{competence.puissance}}</p>
-            <p>ENDURANCE : {{competence.endurance}}</p>
-            <p>INTELLIGENCE : {{competence.intelligence}}</p>
-            <p>CHARISME : {{competence.charisme}}</p>
-            <p>DEXTÉRITÉ : {{competence.dexterite}}</p>
-            <p>SAGESSE : {{competence.sagesse}}</p>
+<div class="liste">
+    <div class="cadre-personnage">
+        <div class="fiche-personnage">
+            <div id="avataar" class="avatar"></div>
+            {% for personnage in personnages %}
+                <div class="description-personnage">
+                    <p class="info-personnage">Type : {{personnage.typepersonnage}}</p>
+                    <p class="info-personnage">{{personnage.description}}</p>
+                    <p class="info-personnage">{{personnage.datenaissance.format('d F Y')}}</p>
+                </div>
+            </div>
+                <div class="point-personnage">
+                    <p class="info-personnage">NIVEAU : {{personnage.niveau}}</p>
+                    <p class="info-personnage">EXP : {{personnage.experience}}</p>
+                    <p class="info-personnage"><img src="{{ asset('Image/coeur.png') }}" class="coeur"> : {{personnage.barrevie}}</p>
+                </div>
+            <div class="fiche-personnage">
+                {% for competence in competences %}
+                <div>
+                    <p class="info-personnage">FORCE : {{competence.puissance}}</p>
+                    <p class="info-personnage">ENDURANCE : {{competence.endurance}}</p>
+                    <p class="info-personnage">INTELLIGENCE : {{competence.intelligence}}</p>
+                </div>
+                <div>
+                    <p class="info-personnage">CHARISME : {{competence.charisme}}</p>
+                    <p class="info-personnage">DEXTÉRITÉ : {{competence.dexterite}}</p>
+                    <p class="info-personnage">SAGESSE : {{competence.sagesse}}</p>
+                </div>
+                {% endfor %}
+            </div>
+            {% for avatar in avatars %}
+            <script>
+                let a = Avataaars.create({width: "10vw", height: "20vh", style: "transparent", clothingGraphic: "skull",
+                                        skin: "{{avatar.skin}}",
+                                        top: "{{avatar.top}}",
+                                        hairColor: "{{avatar.haircolor}}",
+                                        hatColor: "{{avatar.hatcolor}}",
+                                        accessories: "{{avatar.accessories}}",
+                                        accessoriesColor: "{{avatar.accessoriescolor}}",
+                                        facialHair: "{{avatar.facialhair}}",
+                                        facialHairColor: "{{avatar.facialhaircolor}}",
+                                        clothing: "{{avatar.clothing}}",
+                                        clothingColor: "{{avatar.clothingcolor}}"});
+                document.getElementById('avataar').innerHTML = a;
+            </script>
+            {% endfor %}
         {% endfor %}
-        <div id="avataar"></div>
-        {% for avatar in avatars %}
-        <script>
-            let a = Avataaars.create({width: "10vw", height: "20vh", style: "transparent", clothingGraphic: "skull",
-                                    skin: "{{avatar.skin}}",
-                                    top: "{{avatar.top}}",
-                                    hairColor: "{{avatar.haircolor}}",
-                                    hatColor: "{{avatar.hatcolor}}",
-                                    accessories: "{{avatar.accessories}}",
-                                    accessoriesColor: "{{avatar.accessoriescolor}}",
-                                    facialHair: "{{avatar.facialhair}}",
-                                    facialHairColor: "{{avatar.facialhaircolor}}",
-                                    clothing: "{{avatar.clothing}}",
-                                    clothingColor: "{{avatar.clothingcolor}}"});
-            document.getElementById('avataar').innerHTML = a;
-        </script>
-        {% endfor %}
-    {% endfor %}
+    </div>
 </div>
 {% endblock %}
