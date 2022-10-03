@@ -15,7 +15,7 @@ En plus de pouvoir visualiser notre fiche de personnage, nous pouvons créer un 
 
 <h2>Installation</h2>
 
-<p>Pour installer ce projet il faut tout d'abord cloner ce dépot. Dans votre terminal faite : <code>git clone</code> et rajouter le lien que vous souhaiter entre le SSH, HTTPS ou GitHib CLI trouvable en cliquant sur le bouton vert <code>Code</code>
+<p>Pour installer ce projet il faut tout d'abord cloner ce dépot.<br>Dans votre terminal faite : <code>git clone</code> et rajouter le lien que vous souhaiter entre le SSH, HTTPS ou GitHib CLI trouvable en cliquant sur le bouton vert <code>Code</code>.
 <br><br>
 Par la suite, il ne faut pas oublier d'installer les modules manquants en écrivant ceci dans le terminal : <code>composer install</code>.
 <br><br>
@@ -25,7 +25,7 @@ Dans ce ficher, il faut mettre les informations lié à votre base de données e
 <br><br>
 De plus, il faut créer la base de donnée en écrivant dans le terminal : <br><code>php bin/console doctrine:database:create</code>.
 <br><br>
-Enfin, il faut faire une migration des informations vers cette base de donnée : <br><code>php bin/console doctrine:migrations:migrate</code>
+Enfin, il faut faire une migration des informations vers cette base de donnée : <br><code>php bin/console doctrine:migrations:migrate</code>.
 <br><br>
 Le projet est ainsi installer, pour accéder au site, qui tourne localement sur votre ordinateur il faut écrire dans le terminal <code>symfony server:start</code>.<br>Le server ce met en route et pour accéder au site, soit vous cliquer sur le lien donner dans le terminal soit dans votre navigateur vous écriver <code>localhost:8000/</code>.
 <br><br>
