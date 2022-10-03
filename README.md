@@ -4,7 +4,7 @@
 
 <p>Ce projet est la mise en application de Symfony en lien avec la base de donnée pour faire un CRUD (Create, Read, Update, Delete).
 <br><br>
-Le but ici est de pouvoir, en lien avec la bdd, créer la fiche d'un personnage pour des jeux de rôles.
+Le but ici est de pouvoir, en lien avec la base de donnée, créer la fiche d'un personnage pour des jeux de rôles.
 <br><br>
 Ce dernier ce compose d'un nom, une description, une date d'anniversaire, un niveau, des points expériences et des points de vies.<br>
 En plus de cela, cette table est lié à un type, des compétences ainsi qu'un avatar créer via Avataaars.js
@@ -15,5 +15,13 @@ En plus de cela, cette table est lié à un type, des compétences ainsi qu'un a
 
 <p>Pour installer ce projet il faut tout d'abord cloner ce dépot.
 <br><br>
-Ensuite il faut modifier le nom du <code>.env.sample</code> en <code>.env</code> et modifier son contenu : <img src="BDD-env.png"></img>
+<p>Par la suite, il ne faut pas oublier d'installer les modules manquants : <code>composer install</code>.
+<br><br>
+Ensuite il faut modifier le nom du <code>.env.sample</code> en <code>.env</code> et modifier son contenu au niveau des lignes suivantes : 
+<br><br><img src="BDD-env.png"></img><br><br>
+Il faut mettre les informations lié a votre base de données en enlever le commentaire (l'hashtag) selon ce que vous utiliser : sqlite, mysql ou bien postgresql. Les informations seront à completer avec votre nom de compte, votre mot de base ainsi que le nom de la base de donnée que vous voulez créer.
+<br><br>
+Enfin, il faut créer la base de donnée : <code>php bin/console doctrine:database:create</code> (à écrire dans le terminal).
+<br>
+Ensuite, il faut faire une migration des informations vers cette base de donnée : <code>php bin/console doctrine:migrations:migrate</code>
 </p>
