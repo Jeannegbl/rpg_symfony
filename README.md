@@ -1,1 +1,1 @@
-Projet RPG Symfony
+<h1>Projet RPG Symfony</h1>
