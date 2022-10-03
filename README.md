@@ -27,9 +27,9 @@ De plus, il faut créer la base de données en écrivant dans le terminal : <br>
 <br><br>
 Enfin, il faut faire une migration des informations vers cette base de données : <br><code>php bin/console doctrine:migrations:migrate</code>.
 <br><br>
-Le projet est ainsi installer, pour accéder au site, qui tourne localement sur votre ordinateur il faut écrire dans le terminal <code>symfony server:start</code>.<br>Le server ce met en route et pour accéder au site, soit vous cliquer sur le lien donner dans le terminal soit dans votre navigateur vous écriver <code>localhost:8000/</code>.
+Le projet est ainsi installé, pour accéder au site, qui tourne localement sur votre ordinateur, il faut écrire dans le terminal <code>symfony server:start</code>.<br>Le serveur ce met en route et pour accéder au site, soit vous cliquer sur le lien donner dans le terminal soit dans votre navigateur vous écrivez <code>localhost:8000/</code>.
 <br><br>
-Vous voici arriver sur la page d'accueil ! Laisser vous guider par les boutons et créer vos personnages et vos types.
+Vous voici arrivé sur la page d'accueil ! Laissez vous guider par les boutons et créez vos personnages et vos types.
 <br><br>
-Il est recommandé de créer en premier lieu des types avant la création de personnage pour avoir accès à une réalisation complète de votre fiche de personnage sans passer par la modification.
+Il est recommandé de créer, en premier lieu, des types avant la création de personnages pour avoir accès à une réalisation complète de votre fiche de personnage sans passer par la modification.
 </p>
