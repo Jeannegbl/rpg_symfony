@@ -30,5 +30,6 @@ Enfin, il faut faire une migration des informations vers cette base de donnée :
 Le projet est ainsi installer, pour accéder au site, qui tourne localement sur votre ordinateur il faut écrire dans le terminal <code>symfony server:start</code>. Le server ce met en route et pour accéder au site, soit vous cliquer sur le lien donner dans le terminal soit dans votre navigateur vous écriver <code>localhost:8000/</code>.
 <br><br>
 Vous voici arriver sur la page d'accueil ! Laisser vous guider par les boutons et créer vos personnages et vos types.
+<br><br>
 Il est recommandé de créer en premier lieu des types avant la création de personnage pour avoir accès à une réalisation complète de votre fiche de personnage sans passer par la modification.
 </p>
