@@ -15,5 +15,5 @@ En plus de cela, cette table est lié à un type, des compétences ainsi qu'un a
 
 <p>Pour installer ce projet il faut tout d'abord cloner ce dépot.
 <br><br>
-Ensuite il faut modifier le nom du <code>.env.sample</code> en <code>.env</code> et modifier son contenu : <img src="BBD-env.png">
+Ensuite il faut modifier le nom du <code>.env.sample</code> en <code>.env</code> et modifier son contenu : <img src="BBD-env.png"></img>
 </p>
