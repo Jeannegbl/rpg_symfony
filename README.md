@@ -6,10 +6,14 @@
 <br><br>
 Le but ici est de pouvoir, en lien avec la bdd, créer la fiche d'un personnage pour des jeux de rôles.
 <br><br>
-Ce dernier ce compose d'un nom, une description, une date d'anniversaire, un niveau, des points expériences et des points de vies.
-En plus de cela, cette table est lié à un type, des compétences ainsi qu'un avatar créer via Avataaars.js</p>
+Ce dernier ce compose d'un nom, une description, une date d'anniversaire, un niveau, des points expériences et des points de vies.<br>
+En plus de cela, cette table est lié à un type, des compétences ainsi qu'un avatar créer via Avataaars.js
+</p>
 
 
 <h2>Installation</h2>
 
-<p>Pour installer ce projet il faut tout d'abord cloner ce dépot.</p>
+<p>Pour installer ce projet il faut tout d'abord cloner ce dépot.
+<br><br>
+Ensuite il faut modifier le nom du <code>.env.sample</code> en <code>.env</code> et modifier son contenu : <img src="BBD-env.png">
+</p>
