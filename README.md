@@ -15,13 +15,13 @@ En plus de cela, cette table est lié à un type, des compétences ainsi qu'un a
 
 <p>Pour installer ce projet il faut tout d'abord cloner ce dépot.
 <br><br>
-<p>Par la suite, il ne faut pas oublier d'installer les modules manquants : <code>composer install</code>.
+Par la suite, il ne faut pas oublier d'installer les modules manquants en écrivant ceci dans le terminal : <code>composer install</code>.
 <br><br>
-Ensuite il faut modifier le nom du <code>.env.sample</code> en <code>.env</code> et modifier son contenu au niveau des lignes suivantes : 
+Ensuite il faut modifier le nom du fichier<code>.env.sample</code> en <code>.env</code> et modifier son contenu au niveau des lignes suivantes : 
 <br><br><img src="BDD-env.png"></img><br><br>
-Il faut mettre les informations lié a votre base de données en enlever le commentaire (l'hashtag) selon ce que vous utiliser : sqlite, mysql ou bien postgresql. Les informations seront à completer avec votre nom de compte, votre mot de base ainsi que le nom de la base de donnée que vous voulez créer.
+Dans ce ficher, il faut mettre les informations lié à votre base de données en enlever le commentaire (l'hashtag) selon ce que vous utiliser : sqlite, mysql ou bien postgresql. Les informations seront à completer avec votre nom de compte, votre mot de base ainsi que le nom de la base de donnée que vous voulez créer.
 <br><br>
-Enfin, il faut créer la base de donnée : <code>php bin/console doctrine:database:create</code> (à écrire dans le terminal).
+De plus, il faut créer la base de donnée en écrivant dans le terminal : <code>php bin/console doctrine:database:create</code>.
 <br>
-Ensuite, il faut faire une migration des informations vers cette base de donnée : <code>php bin/console doctrine:migrations:migrate</code>
+Enfin, il faut faire une migration des informations vers cette base de donnée : <code>php bin/console doctrine:migrations:migrate</code>
 </p>
