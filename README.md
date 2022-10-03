@@ -15,7 +15,7 @@ En plus de pouvoir visualiser notre fiche de personnage, nous pouvons créer un 
 
 <h2>Installation</h2>
 
-<p>Pour installer ce projet il faut tout d'abord cloner ce dépot.
+<p>Pour installer ce projet il faut tout d'abord cloner ce dépot. Dans votre terminal faite : <code>git clone</code> et rajouter le lien que vous souhaiter entre le SSH, HTTPS ou GitHib CLI trouvable en cliquant sur le bouton vert <code>Code</code>
 <br><br>
 Par la suite, il ne faut pas oublier d'installer les modules manquants en écrivant ceci dans le terminal : <code>composer install</code>.
 <br><br>
