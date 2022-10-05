@@ -89,6 +89,7 @@ header{
 .cadre-personnage{
     background: url(../Image/Fond-parchemin.jpg);
     width: 50vw;
+    background-repeat: no-repeat;
 }
 .avatar{
     display: flex;
