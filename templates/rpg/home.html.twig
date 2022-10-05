@@ -15,11 +15,13 @@
 </style>
 
 <div class="liste">
-    {% for personnage in personnages %}
-    <div class="selection">
-        <h2>{{personnage.nom}}</h2>
-        <input type="button" class="input-bouton input-modifier" value="Plus d'info" onclick="window.location.href='character/{{personnage.id}}';">
+    <div class="centrer-liste">
+        {% for personnage in personnages %}
+        <div class="selection">
+            <h2>{{personnage.nom}}</h2>
+            <input type="button" class="input-bouton input-modifier" value="Plus d'info" onclick="window.location.href='character/{{personnage.id}}';">
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 {% endblock %}
