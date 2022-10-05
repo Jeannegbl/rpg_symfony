@@ -81,6 +81,11 @@ header{
     padding: 6vh 1vw 0 1vw;
     background-color: silver;
 }
+.centrer-liste{
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+}
 .cadre-personnage{
     background: url(../Image/Fond-parchemin.jpg);
     width: 50vw;
