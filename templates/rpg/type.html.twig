@@ -16,14 +16,16 @@
 </style>
 
 <div class="liste">
-    {% for type in types %}
-        <div class="selection">
-            <h2>{{type.nom}}</h2>
-            <div>
-                <input type="button" class="input-bouton input-modifier" value="Modifier" onclick="window.location.href='/type/edit/{{type.id}}';">
-                <input type="button" class="input-bouton input-effacer" value="Effacer" onclick="window.location.href='/type/delete/{{type.id}}';">
+    <div class="centrer-liste">
+        {% for type in types %}
+            <div class="selection">
+                <h2>{{type.nom}}</h2>
+                <div>
+                    <input type="button" class="input-bouton input-modifier" value="Modifier" onclick="window.location.href='/type/edit/{{type.id}}';">
+                    <input type="button" class="input-bouton input-effacer" value="Effacer" onclick="window.location.href='/type/delete/{{type.id}}';">
+                </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
